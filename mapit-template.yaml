@@ -248,7 +248,7 @@ parameters:
   displayName: Git source repository
   name: GIT_URI
   required: true
-  value: https://github.com/siamaksade/mapit-spring.git
+  value: https://github.com/marekfrut/mapit-spring.git
 - displayName: Git branch/tag reference
   name: GIT_REF
   required: true

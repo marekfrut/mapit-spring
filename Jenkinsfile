@@ -3,7 +3,18 @@ pipeline {
       label 'maven'
   }
   stages {
+    stage('Choose Release Version'){
+      steps{
+        script{
+          def isSelector = openshift.selector('is')
+          isSelector.describe() 
+        }
+      }
+    }
     stage('Build App') {
+      tools {
+        maven 'Maven3.6.1'
+      }
       steps {
         sh "mvn install"
       }
