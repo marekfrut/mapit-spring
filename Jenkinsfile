@@ -3,11 +3,13 @@ pipeline {
       label 'maven'
   }
   stages {
-    stage('Choose Release Version'){
+    stage('Choose Release Version') {
       steps{
         script{
-          def isSelector = openshift.selector('is')
-          isSelector.describe() 
+          openShift.withCluster() {
+            def isSelector = openshift.selector('is')
+            isSelector.describe() 
+          }
         }
       }
     }
