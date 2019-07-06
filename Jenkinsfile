@@ -6,7 +6,7 @@ pipeline {
     stage('Choose Release Version') {
       steps{
         script{
-          openShift.withCluster() {
+          openshift.withCluster() {
             def isSelector = openshift.selector('is')
             isSelector.describe() 
           }
